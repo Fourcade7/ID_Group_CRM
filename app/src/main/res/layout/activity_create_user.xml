@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activitys.Create_User">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFC107"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+            <ImageView
+                android:clickable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_centerVertical="true"
+                android:id="@+id/imageviewdehaze2"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_round_person_add_alt_1_24"
+                ></ImageView>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/imageviewdehaze2"
+                android:id="@+id/clickme2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить нового работника"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:textSize="15dp"
+                ></TextView>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+        <EditText
+            android:text="Pr"
+            android:id="@+id/edittextusername"
+            android:background="@drawable/edittextbackground"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Имя и Фамилия"
+            android:textSize="15dp"
+            ></EditText>
+        <EditText
+            android:text="Pr@gmail.com"
+            android:id="@+id/edittextuseraccount"
+            android:background="@drawable/edittextbackground"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Эл. адрес"
+            android:textSize="15dp"
+            ></EditText>
+        <EditText
+            android:text="123456789"
+            android:id="@+id/edittextpassword"
+            android:background="@drawable/edittextbackground"
+            android:layout_marginTop="5dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Пароль"
+            android:textSize="15dp"
+            ></EditText>
+        <EditText
+            android:text="123456789"
+            android:id="@+id/edittextconfirmpassword"
+            android:background="@drawable/edittextbackground"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Повторите пароль"
+            android:textSize="15dp"
+            ></EditText>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonregisteruser"
+            android:background="@drawable/buttonbackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:text="Добавить"
+            ></androidx.appcompat.widget.AppCompatButton>
+    </LinearLayout>
+
+
+
+</LinearLayout>

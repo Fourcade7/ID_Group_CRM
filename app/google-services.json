@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "661668172610",
+    "project_id": "id-group-crm",
+    "storage_bucket": "id-group-crm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661668172610:android:07d1211780031d31526edb",
+        "android_client_info": {
+          "package_name": "com.example.id_group_crm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661668172610-p66bbvt9qlqmmkpifmqeqfafuv13cg1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZBlz0HWaOVsIO7cMrA6jtkyF3F5YxnOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661668172610-p66bbvt9qlqmmkpifmqeqfafuv13cg1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
