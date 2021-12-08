@@ -38,8 +38,8 @@ class Home : Fragment() {
                     arrayList.add(users!!)
                 }
 
-                val userAdapter=UserAdapter(activity!!.applicationContext,arrayList)
-                val layoutManager=LinearLayoutManager(activity!!.applicationContext)
+                val userAdapter= context?.let { UserAdapter(it,arrayList) }
+                val layoutManager=LinearLayoutManager(context)
 //                layoutManager.reverseLayout=true
 //                layoutManager.stackFromEnd=true
                view.recyclerview1.layoutManager=layoutManager

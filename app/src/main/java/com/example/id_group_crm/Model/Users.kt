@@ -5,6 +5,7 @@ class Users(
     var useraccount:String?="",
     var userpassword:String?="",
     var useruploadkey:String?="",
-    var userdatetime:String?=""
+    var userdatetime:String?="",
+    var userauthuid: String = ""
 ) {
 }

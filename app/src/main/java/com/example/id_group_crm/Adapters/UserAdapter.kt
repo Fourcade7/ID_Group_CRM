@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.recyclerview_item1.view.*
 
 data class UserAdapter(
     val context: Context,
-    val userarrayList: ArrayList<Users>
+    var userarrayList: ArrayList<Users>
 ): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
 

@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="#fcd108"
+    android:background="#FFC107"
     android:layout_height="180dp">
 
-<!--    <ImageView-->
-<!--        android:layout_width="150dp"-->
-<!--        android:layout_height="150dp"-->
-<!--        android:layout_centerVertical="true"-->
-<!--        android:background="#fcd108"-->
-<!--        android:padding="20dp"-->
-<!--        android:scaleType="fitStart"-->
-<!--        android:src="@drawable/idgroup"></ImageView>-->
+
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"

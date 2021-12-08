@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context=".Fragments.Chat">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatrecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:listitem="@layout/recyclerview_item2"
+        android:layout_above="@id/chatrelativlay2"></androidx.recyclerview.widget.RecyclerView>
 
-</FrameLayout>
+    <RelativeLayout
+        android:padding="5dp"
+        android:id="@+id/chatrelativlay2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <EditText
+            android:id="@+id/chatedittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/chatimageview"
+            android:background="@drawable/edittextbackground"
+            android:hint="Напиши сообщение"
+            android:padding="10dp"></EditText>
+
+        <ImageView
+            android:clickable="true"
+            android:id="@+id/chatimageview"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/sendbackground"
+            android:src="@drawable/ic_round_send_24"
+            ></ImageView>
+    </RelativeLayout>
+
+</RelativeLayout>

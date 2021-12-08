@@ -1,60 +1,81 @@
 package com.example.id_group_crm.Fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.id_group_crm.Adapters.ChatAdapter
+import com.example.id_group_crm.Adapters.UserAdapter
+import com.example.id_group_crm.Constants
+import com.example.id_group_crm.Model.UserChat
+import com.example.id_group_crm.Model.Users
 import com.example.id_group_crm.R
+import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.fragment_chat.view.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Chat.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Chat : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class Chat() : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var databaseReference:DatabaseReference
+     var chatarraylist=ArrayList<UserChat>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+        val view=inflater.inflate(R.layout.fragment_chat, container, false)
+
+        val calendar=Calendar.getInstance()
+        var hour=calendar.get(Calendar.HOUR_OF_DAY)
+        var minute=calendar.get(Calendar.MINUTE)
+
+        databaseReference=FirebaseDatabase.getInstance().getReference().child("Chats")
+
+        view.chatimageview.setOnClickListener {
+            if (view.chatedittext.text.toString().isEmpty()){
+                view.chatedittext.setError("Напиши сообщение")
+            }else{
+                var uploadkey:String=databaseReference.push().key.toString()
+                val userChat=UserChat(Constants.username,view.chatedittext.text.toString(),"$hour:$minute",uploadkey)
+                databaseReference.child(uploadkey).setValue(userChat)
+                view.chatedittext.setText("")
+
+            }
+        }
+
+        databaseReference.addValueEventListener(object :ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                chatarraylist.clear()
+                for (datasnapshot in snapshot.children){
+                    val userChat=datasnapshot.getValue(UserChat::class.java)
+                    chatarraylist.add(userChat!!)
+                }
+
+                var chatadapter= context?.let { ChatAdapter(it,chatarraylist) }
+                val layoutManager= LinearLayoutManager(context)
+               // layoutManager.reverseLayout=true
+                layoutManager.stackFromEnd=true
+                view.chatrecyclerview.layoutManager=layoutManager
+                view.chatrecyclerview.adapter=chatadapter
+                //Toast.makeText(activity,chatarraylist.size,Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
+
+         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Chat.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Chat().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:gravity="center"
+    tools:context=".Activitys.Login_Activity">
+    <EditText
+        android:text="Worker@gmail.com"
+        android:id="@+id/edittextuseaccountlogin"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Имя и Фамилия"
+        android:textSize="15dp"
+        ></EditText>
+    <EditText
+        android:text="123456789"
+        android:id="@+id/edittextuserpasswordlogin"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Эл. адрес"
+        android:textSize="15dp"
+        ></EditText>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonlogin"
+        android:background="@drawable/buttonbackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"
+        android:text="Войти"
+        ></androidx.appcompat.widget.AppCompatButton>
+
+</LinearLayout>

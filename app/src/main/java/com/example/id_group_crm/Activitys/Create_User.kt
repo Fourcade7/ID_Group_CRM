@@ -10,12 +10,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import com.airbnb.lottie.LottieAnimationView
+import com.example.id_group_crm.Model.UserMap
 import com.example.id_group_crm.Model.Users
 import com.example.id_group_crm.R
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_create_user.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.*
 
 class Create_User : AppCompatActivity() {
@@ -47,21 +52,32 @@ class Create_User : AppCompatActivity() {
                dialog.create()
                dialog.show()
 
-               firebaseAuth.createUserWithEmailAndPassword(edittextuseraccount.text.toString(),edittextpassword.text.toString()).addOnCompleteListener(
-                   OnCompleteListener {
+               firebaseAuth.createUserWithEmailAndPassword(edittextuseraccount.text.toString(),edittextpassword.text.toString()).addOnCompleteListener{
 
                        if (it.isSuccessful){
-                           val databaseReference=FirebaseDatabase.getInstance().getReference().child("Workers")
+                          GlobalScope.launch(Dispatchers.Main) {
+                              delay(200)
+                              val databaseReference=FirebaseDatabase.getInstance().getReference().child("Workers")
 
-                           var uploadkey:String=databaseReference.push().key.toString()
-                           val users=Users(edittextusername.text.toString(),edittextuseraccount.text.toString(),edittextpassword.text.toString(),uploadkey,"$day/$month/$year")
-                           databaseReference.child(uploadkey).setValue(users)
+                              var uploadkey:String=databaseReference.push().key.toString()
+                              val users=Users(edittextusername.text.toString(),edittextuseraccount.text.toString(),edittextpassword.text.toString(),uploadkey,"$day/$month/$year",firebaseAuth.currentUser!!.uid)
+                              databaseReference.child(uploadkey).setValue(users)
 
-                           dialog.dismiss()
+                              dialog.dismiss()
+
+
+                              val databaseReference2=FirebaseDatabase.getInstance().getReference().child(firebaseAuth.currentUser!!.uid)
+                              val userMap=UserMap(edittextusername.text.toString(),firebaseAuth.currentUser!!.uid,41.7213480,60.7745550)
+                             // 41.5512370,60.6271150 //urgench
+                             // 41.6767651,60.7385839 //beruniy
+                             // 41.361915,60.613518 yangiariq
+                              //41.7213480,60.7745550  //asad tatu
+                              databaseReference2.setValue(userMap)
+                          }
 
                        }
 
-                   })
+                   }
 
 
 

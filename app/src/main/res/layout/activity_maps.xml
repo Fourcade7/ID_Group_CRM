@@ -6,11 +6,63 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activitys.Maps">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarmaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFC107"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+            <ImageView
+                android:clickable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_centerVertical="true"
+                android:id="@+id/imageviewmap1"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:src="@drawable/placeholder"
+                ></ImageView>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/imageviewmap1"
+                android:id="@+id/textviewmap1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Расположение рабочих"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:textSize="15dp"
+                ></TextView>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardUseCompatPadding="true"-->
+<!--        app:cardCornerRadius="8dp"-->
+<!--        app:cardElevation="8dp"-->
+<!--        >-->
+<!--        <fragment-->
+<!--            android:id="@+id/googlemap"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="500dp"-->
+<!--            android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--            ></fragment>-->
+<!--    </androidx.cardview.widget.CardView>-->
 
 
     <TextView
-        android:id="@+id/textview3"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/textviewmaps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></TextView>
+
+
 
 </LinearLayout>
