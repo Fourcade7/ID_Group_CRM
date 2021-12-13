@@ -66,8 +66,8 @@ class Create_User : AppCompatActivity() {
                               dialog.dismiss()
 
 
-                              val databaseReference2=FirebaseDatabase.getInstance().getReference().child(firebaseAuth.currentUser!!.uid)
-                              val userMap=UserMap(edittextusername.text.toString(),firebaseAuth.currentUser!!.uid,41.7213480,60.7745550)
+                              val databaseReference2=FirebaseDatabase.getInstance().getReference().child("Users").child(firebaseAuth.currentUser!!.uid)
+                              val userMap=UserMap(edittextusername.text.toString(),firebaseAuth.currentUser!!.uid,41.5512370,60.6271150)
                              // 41.5512370,60.6271150 //urgench
                              // 41.6767651,60.7385839 //beruniy
                              // 41.361915,60.613518 yangiariq

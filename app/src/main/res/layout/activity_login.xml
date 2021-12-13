@@ -8,26 +8,33 @@
     android:padding="15dp"
     android:gravity="center"
     tools:context=".Activitys.Login_Activity">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottianimationview2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:lottie_fileName="alert.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        ></com.airbnb.lottie.LottieAnimationView>
     <EditText
-        android:text="Worker@gmail.com"
+        android:hint="Эл. адрес"
         android:id="@+id/edittextuseaccountlogin"
         android:background="@drawable/edittextbackground"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:hint="Имя и Фамилия"
         android:textSize="15dp"
         ></EditText>
     <EditText
-        android:text="123456789"
+
         android:id="@+id/edittextuserpasswordlogin"
         android:background="@drawable/edittextbackground"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:hint="Эл. адрес"
+        android:hint="пароль"
         android:textSize="15dp"
         ></EditText>
     <androidx.appcompat.widget.AppCompatButton

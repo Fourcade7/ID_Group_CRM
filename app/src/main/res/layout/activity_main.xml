@@ -27,28 +27,30 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_round_dehaze_24"
                 ></ImageView>
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageviewadduser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:clickable="true"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:layout_marginRight="15dp"
-                android:src="@drawable/ic_round_person_add_alt_1_24"
-                ></ImageView>
+                android:src="@drawable/idgroup"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="1dp"></de.hdodenhof.circleimageview.CircleImageView>
+
 
             <TextView
                 android:id="@+id/clickme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
                 android:layout_toRightOf="@+id/imageviewdehaze"
                 android:text="ID Group"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold"></TextView>
+                android:textSize="17dp"></TextView>
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -70,14 +72,14 @@
             app:menu="@menu/nmenu"
             ></com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
+
     <LinearLayout
         android:id="@+id/linearlay1"
-        android:layout_above="@+id/bottomnavigationview"
-        android:layout_below="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        ></LinearLayout>
+        android:layout_above="@+id/bottomnavigationview"
+        android:layout_below="@+id/toolbar1"
+        android:orientation="vertical"></LinearLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

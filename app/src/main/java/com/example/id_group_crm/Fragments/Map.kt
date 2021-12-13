@@ -274,7 +274,7 @@ class Map : Fragment(), OnMapReadyCallback {
     }
 
     fun readlatlang(i:Int):LatLng{
-        val databaseReference2=FirebaseDatabase.getInstance().getReference().child(arrayList.get(i).userauthuid)
+        val databaseReference2=FirebaseDatabase.getInstance().getReference().child("Users").child(arrayList.get(i).userauthuid)
 
 
         databaseReference2.addValueEventListener(object: ValueEventListener {

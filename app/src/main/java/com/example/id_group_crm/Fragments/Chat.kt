@@ -32,18 +32,20 @@ class Chat() : Fragment() {
     ): View? {
         val view=inflater.inflate(R.layout.fragment_chat, container, false)
 
-        val calendar=Calendar.getInstance()
-        var hour=calendar.get(Calendar.HOUR_OF_DAY)
-        var minute=calendar.get(Calendar.MINUTE)
+
+
 
         databaseReference=FirebaseDatabase.getInstance().getReference().child("Chats")
 
         view.chatimageview.setOnClickListener {
+            val calendar=Calendar.getInstance()
+            var hour=calendar.get(Calendar.HOUR_OF_DAY)
+            var minute=calendar.get(Calendar.MINUTE)
             if (view.chatedittext.text.toString().isEmpty()){
                 view.chatedittext.setError("Напиши сообщение")
             }else{
                 var uploadkey:String=databaseReference.push().key.toString()
-                val userChat=UserChat(Constants.username,view.chatedittext.text.toString(),"$hour:$minute",uploadkey)
+                var userChat=UserChat(Constants.username,view.chatedittext.text.toString(),"$hour:$minute",uploadkey)
                 databaseReference.child(uploadkey).setValue(userChat)
                 view.chatedittext.setText("")
 

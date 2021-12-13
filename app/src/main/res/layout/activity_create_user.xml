@@ -35,8 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Добавить нового работника"
-                android:textColor="@color/black"
                 android:layout_centerVertical="true"
+                android:textColor="@color/black"
                 android:textSize="15dp"
                 ></TextView>
         </RelativeLayout>
@@ -49,7 +49,7 @@
         android:padding="10dp"
         >
         <EditText
-            android:text="Worker"
+
             android:id="@+id/edittextusername"
             android:background="@drawable/edittextbackground"
             android:layout_marginTop="5dp"
@@ -60,7 +60,7 @@
             android:textSize="15dp"
             ></EditText>
         <EditText
-            android:text="Worker@gmail.com"
+
             android:id="@+id/edittextuseraccount"
             android:background="@drawable/edittextbackground"
             android:layout_marginTop="5dp"
@@ -71,7 +71,7 @@
             android:textSize="15dp"
             ></EditText>
         <EditText
-            android:text="123456789"
+
             android:id="@+id/edittextpassword"
             android:background="@drawable/edittextbackground"
             android:layout_marginTop="5dp"
@@ -79,11 +79,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:hint="Пароль"
+            android:hint="Пароль не менее 8 символов"
             android:textSize="15dp"
             ></EditText>
         <EditText
-            android:text="123456789"
+
             android:id="@+id/edittextconfirmpassword"
             android:background="@drawable/edittextbackground"
             android:layout_marginTop="5dp"

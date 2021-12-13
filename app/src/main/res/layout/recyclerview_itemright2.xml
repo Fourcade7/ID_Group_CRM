@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="end"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        >
+
+        <RelativeLayout
+            android:paddingRight="5dp"
+            android:id="@+id/chatrelativelay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:background="@drawable/itembackground"
+            >
+
+
+
+            <LinearLayout
+                android:id="@+id/chatlinearlay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:padding="5dp"
+
+
+                >
+
+                <TextView
+                    android:id="@+id/chattextview1"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="5dp"
+                    android:text="Aminov Furqatbek"
+                    android:textColor="@color/black"
+
+                    ></TextView>
+
+                <TextView
+
+                    android:id="@+id/chattextview3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/chatimageview1"
+                    android:text="Write a new medfdffdfdfssage "
+                    android:textSize="13dp"
+
+                    ></TextView>
+
+                <TextView
+
+                    android:id="@+id/chattextview2"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="5dp"
+                    android:text="14:10"
+
+                    ></TextView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

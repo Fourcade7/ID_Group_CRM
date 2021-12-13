@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".Adapters.TaskActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:background="#FFC107"
+        >
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:id="@+id/textviewTaskActivity1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вы можете поставить задачу на"
+           ></TextView>
+    </LinearLayout>
+
+
+
+
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:padding="15dp"
+     android:orientation="vertical">
+     <EditText
+         android:drawableRight="@drawable/ic_round_edit_24"
+         android:id="@+id/edittextTaskActivity1"
+         android:background="@drawable/edittextbackground"
+         android:layout_marginTop="15dp"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="10dp"
+         android:hint="Написать задание"
+         android:textSize="15dp"
+         ></EditText>
+     <EditText
+         android:drawableRight="@drawable/ic_round_calendar_month_24"
+         android:editable="false"
+         android:focusable="false"
+         android:focusableInTouchMode="false"
+         android:id="@+id/edittextTaskActivity2"
+         android:background="@drawable/edittextbackground"
+         android:layout_marginTop="15dp"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="10dp"
+         android:hint="Начальное время"
+         android:textSize="15dp"
+         ></EditText>
+     <EditText
+         android:drawableRight="@drawable/ic_round_calendar_month_24"
+         android:editable="false"
+         android:focusable="false"
+         android:focusableInTouchMode="false"
+         android:id="@+id/edittextTaskActivity3"
+         android:background="@drawable/edittextbackground"
+         android:layout_marginTop="15dp"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="10dp"
+         android:hint="Время окончания"
+         android:textSize="15dp"
+         ></EditText>
+     <androidx.appcompat.widget.AppCompatButton
+         android:id="@+id/buttonTaskActivity1"
+         android:background="@drawable/buttonbackground"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:textAllCaps="false"
+         android:text="Добавить задачу"
+         ></androidx.appcompat.widget.AppCompatButton>
+ </LinearLayout>
+
+
+</LinearLayout>
